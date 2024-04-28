@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  style.
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+  h1= city.City_name
+  table
+    thead
+      tr
+        th Attribute
+        th Value
+    tbody
+      tr
+        td Temperature
+        td= city.Avg_temperature
+      tr
+        td Description
+        td= city.description
+      tr
+        td Country
+        td= city.country_name

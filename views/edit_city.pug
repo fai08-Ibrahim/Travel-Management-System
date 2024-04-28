@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1 Edit City
+  form(method="post", action="/cities/edit/" + city.City_name)
+    label(for="City_name") City Name:
+    input(type="text", name="City_name", required=true, value=city.City_name, readonly)
+    label(for="Avg_temperature") Average Temperature:
+    input(type="number", name="Avg_temperature", required=true, value=city.Avg_temperature)
+    label(for="description") Description:
+    input(type="text", name="description", required=true, value=city.description)
+    label(for="country_name") Country Name:
+    input(type="text", name="country_name", required=true, value=city.country_name)
+    button(type="submit") Submit

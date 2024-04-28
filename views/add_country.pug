@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1 Add New Country
+  form(method="post", action="/countries/add")
+    label(for="name") Name:
+    input(type="text", name="name", required=true)
+    label(for="weather") Weather:
+    input(type="text", name="weather", required=true)
+    label(for="laws") Laws:
+    input(type="text", name="laws", required=true)
+    label(for="currency") Currency:
+    input(type="text", name="currency", required=true)
+    label(for="Famous_for") Famous For:
+    input(type="text", name="Famous_for", required=true)
+    button(type="submit") Submit

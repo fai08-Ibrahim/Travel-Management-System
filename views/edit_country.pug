@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1 Edit Country
+  form(method="post", action="/countries/edit/" + country.name)
+    label(for="name") Country Name:
+    input(type="text", name="name", required=true, value=country.name, readonly)
+    label(for="weather") Weather:
+    input(type="text", name="weather", required=true, value=country.weather)
+    label(for="laws") Laws:
+    input(type="text", name="laws", required=true, value=country.laws)
+    label(for="currency") Currency:
+    input(type="text", name="currency", required=true, value=country.currency)
+    label(for="Famous_for") Famous For:
+    input(type="text", name="Famous_for", required=true, value=country.Famous_for)
+    button(type="submit") Submit

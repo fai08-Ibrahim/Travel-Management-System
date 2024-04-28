@@ -1,0 +1,41 @@
+extends layout
+
+block content
+  style.
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+
+  h1 Cities List
+  a(href='/cities/add') Add New City
+  form(method='GET', action='/cities/search')
+    input(type='text', name='name', placeholder='Enter city name', required=true)
+    button(type='submit') Search
+  
+  if cities.length
+    table
+      thead
+        tr
+          th City Name
+          th Average Temperature
+          th Description
+          th Country
+          th Actions
+      tbody
+        each city in cities
+          tr
+            td= city.City_name
+            td= city.Avg_temperature
+            td= city.description
+            td= city.country_name
+            td
+              a(href='/cities/edit/' + city.City_name) Edit
+              br
+              a(href='/cities/delete/' + city.City_name, onclick="return confirm('Are you sure?');") Delete
+  else
+    p No cities found.

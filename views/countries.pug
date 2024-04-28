@@ -1,0 +1,43 @@
+extends layout
+
+block content
+  style.
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+
+  h1 Countries List
+  a(href='/countries/add') Add New Country
+  form(method='GET', action='/countries/search')
+    input(type='text', name='name', placeholder='Enter country name', required=true)
+    button(type='submit') Search
+
+  if countries.length
+    table
+      thead
+        tr
+          th Name
+          th Weather
+          th Laws
+          th Currency
+          th Famous For
+          th Actions
+      tbody
+        each country in countries
+          tr
+            td= country.name
+            td= country.weather
+            td= country.laws
+            td= country.currency
+            td= country.Famous_for
+            td
+              a(href='/countries/edit/' + country.name) Edit
+              br
+              a(href='/countries/delete/' + country.name, onclick="return confirm('Are you sure?');") Delete
+  else
+    p No countries found.

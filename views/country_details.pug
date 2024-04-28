@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  style.
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+  h1= country.name
+  table
+    thead
+      tr
+        th Attribute
+        th Value
+    tbody
+      tr
+        td Weather
+        td= country.weather
+      tr
+        td Laws
+        td= country.laws
+      tr
+        td Currency
+        td= country.currency
+      tr
+        td Famous For
+        td= country.Famous_for

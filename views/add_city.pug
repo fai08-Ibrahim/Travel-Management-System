@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1 Add City
+  form(method="post", action="/cities/add")
+    label(for="City_name") City Name:
+    input(type="text", name="City_name", required=true)
+    label(for="Avg_temperature") Average Temperature:
+    input(type="number", name="Avg_temperature", required=true)
+    label(for="description") Description:
+    input(type="text", name="description", required=true)
+    label(for="country_name") Country Name:
+    input(type="text", name="country_name", required=true)
+    button(type="submit") Submit
